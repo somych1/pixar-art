@@ -1,3 +1,11 @@
+const brushBox = function(){
+	for(let i = 0; i < 3; i++){
+		const div = $('<div class="recent-colors">')
+		div.appendTo($('.controls'))
+	}
+}
+brushBox()
+
 const button = $('#set-color')
 
 const colorField = $('#color-field')
@@ -7,13 +15,17 @@ button.on('click', function(event){
 	console.log(event)
 	event.preventDefault()
 	const color = colorField.val()
+	$('.recent-colors').eq(2).css('background-color', $('.recent-colors').eq(1).css('background-color'));
+	$('.recent-colors').eq(1).css('background-color', $('.recent-colors').eq(0).css('background-color'));
+	$('.recent-colors').eq(0).css('background-color', $('.brush').css('background-color'));
+	
 	$('.brush').css('background-color', color)
 	// console.log(e.target)
 	// console.log(e.currentTarget)
 	// const theButton = $(e.currentTarget)
 })
 const createDiv = function(){
-	for(let i =0; i < 20; i++){
+	for(let i =0; i < 8000; i++){
 		const div = $('<div class="square">')
 		div.appendTo($('body'))
 
@@ -23,21 +35,12 @@ const createDiv = function(){
 createDiv()
 
 
-$('.square').on('click', function(event){
+$('.square').on('mouseover', function(event){
 	console.log(event.currentTarget)
 	const squareColor = $(event.currentTarget)
 	console.log(squareColor)
 	squareColor.css('background-color', $('.brush').css('background-color'))
-	// const theh2 = $(event.currentTarget)
-	// if(theh2.css('background-color') === 'rgb(255, 0, 0)'){
-	// 	theh2.css('background', 'none')
-	// } else {
-	// 	theh2.css('background-color', 'rgb(255, 0, 0')
-	// }
+	
 })
 
-// Add functionality so that when I click on each "square", it changes the color of that individual square to "green"
-// Hint: either add the event listener while creating the squares, or listen for events on the body element
-// $('#color-field').on("input", function(event){
-// 	console.log('it work')
-// });
+// Add a color swatch. You should have 3 boxes with the most recent 3 colors used. When you click on each of those boxes, it should set the current brush color back to that color.

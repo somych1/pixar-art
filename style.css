@@ -1,5 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Monoton);
 
+.recent-colors {
+  width: 70px;
+  height: 70px;
+  background: #1B4370;
+  margin: 15px 20px;
+  display: inline-block;
+  border: 1px solid black;
+}
 .brush {
   width: 100px;
   height: 100px;
