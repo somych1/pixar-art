@@ -21,6 +21,23 @@ const createDiv = function(){
 	}
 }
 createDiv()
+
+
+$('.square').on('click', function(event){
+	console.log(event.currentTarget)
+	const squareColor = $(event.currentTarget)
+	console.log(squareColor)
+	squareColor.css('background-color', $('.brush').css('background-color'))
+	// const theh2 = $(event.currentTarget)
+	// if(theh2.css('background-color') === 'rgb(255, 0, 0)'){
+	// 	theh2.css('background', 'none')
+	// } else {
+	// 	theh2.css('background-color', 'rgb(255, 0, 0')
+	// }
+})
+
+// Add functionality so that when I click on each "square", it changes the color of that individual square to "green"
+// Hint: either add the event listener while creating the squares, or listen for events on the body element
 // $('#color-field').on("input", function(event){
 // 	console.log('it work')
 // });
