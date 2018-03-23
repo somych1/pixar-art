@@ -12,8 +12,15 @@ button.on('click', function(event){
 	// console.log(e.currentTarget)
 	// const theButton = $(e.currentTarget)
 })
+const createDiv = function(){
+	for(let i =0; i < 20; i++){
+		const div = $('<div class="square">')
+		div.appendTo($('body'))
 
 
+	}
+}
+createDiv()
 // $('#color-field').on("input", function(event){
 // 	console.log('it work')
 // });
